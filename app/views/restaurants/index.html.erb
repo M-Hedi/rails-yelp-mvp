@@ -1,0 +1,12 @@
+<h1 class="p-3 mb-2 bg-success text-white text-center">Restaurants</h1>
+
+<div class="container witdh=70%" >
+
+  <div >
+    <ul class="list-group">
+      <% @restaurants.each do |restaurant| %>
+        <li class=" w-25 list-unstyled p-3 alert alert-success" role="alert "> <%= link_to restaurant.name , restaurant_path(restaurant) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

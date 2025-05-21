@@ -1,0 +1,24 @@
+<div class="card border-primary mb-3 p-3 mb-2 text-center " style="max-width: 18rem;">
+
+  <h2 class="card-header"><%= @restaurant.name %></h2>
+  <br>
+  <p><%= @restaurant.address %></p>
+  <p><%= @restaurant.phone_number%></p>
+  <p><%= @restaurant.category%></p>
+
+</div>
+
+<p><strong>Reviews</strong></p>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %></li>
+     <li class="list-group-item"><%= review.rating %></li>
+  <% end %>
+</ul>
+<br>
+
+
+<br>
+
+<%= link_to("Vers page home", restaurants_path) %>
+<%= link_to("Vers reviews", new_restaurant_review_path(@restaurant)) %>
